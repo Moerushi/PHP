@@ -14,6 +14,7 @@ services:
     ports:
       - "80:80"
     volumes:
+    # проброс и копирование из локальной папки на пк ./code
        - ./code:/data/mysite.local
     networks:
       - app-network

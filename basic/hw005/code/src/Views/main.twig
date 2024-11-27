@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="styles/style.css">
+    
+</head>
+
+<body>
+
+{% include 'header.twig' %}
+
+<main class="mainBox">
+    <div class="mainBoxInner container">
+        <div>{% include content_template_name %}</div>
+        <div>{% include 'sidebar.twig' %}</div>
+    </div>    
+</main>
+
+{% include 'footer.twig' %}
+
+</body>
+
+</html>
