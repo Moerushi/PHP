@@ -2,8 +2,6 @@
 
 namespace Geekbrains\Application1;
 
-use Geekbrains\Application1\Application\Render;
-
 final class Application
 {
 

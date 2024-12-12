@@ -92,9 +92,13 @@ class User {
     }
 
     public function saveToStorage(){
+
+        // сформировали sql запрос без явной передачи данных, а лишь указан места, куда надо вставить данные (: обозначает palceholder)
         $sql = "INSERT INTO users(user_name, user_lastname, user_birthday_timestamp) VALUES (:user_name, :user_lastname, :user_birthday)";
 
+        // создаем подготовленный запрос
         $handler = Application::$storage->get()->prepare($sql);
+        // выполнить наш подготовленный запрос
         $handler->execute([
             'user_name' => $this->userName,
             'user_lastname' => $this->userLastName,

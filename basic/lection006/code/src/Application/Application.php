@@ -15,6 +15,7 @@ class Application {
 
     public static Config $config;
 
+    // чтобы не загружать каждый запрос
     public static Storage $storage;
 
     public function __construct(){

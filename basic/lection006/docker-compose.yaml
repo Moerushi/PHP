@@ -48,6 +48,7 @@ services:
 
   #Контейнер с БД
   database:
+    platform: linux/x86_64
     image: mysql:5.7
     container_name: database # имя контейнера после запуска
     environment:
