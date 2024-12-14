@@ -1,0 +1,6 @@
+{% if not user_authorized %}
+    <p><a style="color: blue" href="/user/auth/">Вход в систему</a></p>
+{% else %}
+    <p>Добро пожаловать на сайт <span>{{ user_name }}!</span></p>
+<p><a style="color: blue" href="/user/logout/">Выйти из системы</a></p>
+{% endif %}
