@@ -1,0 +1,3 @@
+[2024-12-15T13:27:48.511487+00:00] application_logger.ERROR: МетодactionPickне существует в контроллереGeekbrains\Application1\Domain\Controllers\UserController|Попытка вызова адреса/user/pick [] []
+[2024-12-15T13:28:37.793288+00:00] application_logger.ERROR: Метод actionPick не существует в контроллере Geekbrains\Application1\Domain\Controllers\UserController | Попытка вызова адреса /user/pick [] []
+[2024-12-15T13:28:44.215384+00:00] application_logger.ERROR: Метод actionDelede не существует в контроллере Geekbrains\Application1\Domain\Controllers\UserController | Попытка вызова адреса /user/delede [] []

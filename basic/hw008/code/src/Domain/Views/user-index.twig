@@ -1,0 +1,15 @@
+<h1>{{ title }}</h1>
+<ul>
+    {% for user in users %}
+        <li>
+        <p>
+        {{ user.getUserName() }}. 
+        День рождения: 
+        {% if user.getUserBirthday() is empty %}
+            <b>не установлен</b>
+        {% else %}
+
+        {{ user.getUserBirthday() | date('d.m.Y') }}</p></li>
+        {% endif %}
+    {% endfor %}
+</ul>
