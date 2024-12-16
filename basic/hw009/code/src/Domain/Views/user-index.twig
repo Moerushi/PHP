@@ -1,0 +1,66 @@
+<h1>{{ title }}</h1>
+
+<div class="table-responsive small">
+    <table class="table table-striped table-sm">
+    <thead>
+        <tr>
+            <th scope="cole">ID</th>
+            <th scope="cole">Имя</th>
+            <th scope="cole">Фамилия</th>
+            <th scope="cole">День рождения</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+
+            <tr>
+                <td>{{ user.getUserId() }}</td>
+
+                <td>{{ user.getUserName() }}</td>
+                <td>{{ user.getUserLastName() }}</td>
+                <td>
+                    {% if user.getUserBirthday() is empty %}
+                        <b>не установлен</b>
+                    {% else %}
+                        {{ user.getUserBirthday() | date('d.m.Y') }}</p></li>
+                    {% endif %}
+                </td>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+    </table>
+
+    <script>
+
+    let maxId = $('.table-responsive tbody tr:last-child td:first-child').html();
+
+        setInterval(function(
+            $.ajax({
+                method: 'POST',
+                data: {maxId : maxId},
+                url: '/user/indexRefresh/'
+            }).done(function(data){
+                let users = $.parseJSON(data);
+
+                if(users.length != 0) {
+                    for (var k in users) {
+                        let row = "<tr>";
+
+                            row += "<td>" + users[k].id + "</td>";
+
+                            maxId = users[k].userId;
+
+                            row += "<td>" + users[k].username + "</td>";
+                            row += "<td>" + users[k].userlastname + "</td>";
+                            row += "<td>" + users[k].userbirthday + "</td>";
+                            row += "</tr>";
+
+                        $('.content-template tbody').append(row);
+                    }
+                }
+            });
+        ),10000);
+
+    </script>
+</div>
